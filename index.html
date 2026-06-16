@@ -747,7 +747,7 @@
             isolation: isolate;
         }
         #cineLattice { display: none !important; }
-        main#main-content, nav, footer { position: relative; z-index: 1; }
+        main#main-content, nav { position: relative; z-index: 1; }
         .chat-widget, .chat-window { position: fixed !important; z-index: 70; }
         nav.glass-nav { z-index: 50; }
         /* Page surfaces use normal backgrounds (lattice removed). */
@@ -1010,6 +1010,9 @@
             }
             #home h1 .text-3xl {
                 font-size: 1.3rem;
+            }
+            #home h1 .hero-tagline {
+                font-size: 1.65rem;
             }
             #home .text-lg.sm\\:text-xl {
                 font-size: 1rem;
@@ -1395,6 +1398,8 @@
         .op-name { font-family: 'Outfit', sans-serif; font-size: 1.65rem; font-weight: 700; letter-spacing: -0.01em; color: #1a1a1a; line-height: 1.1; }
         .op-title { font-size: 0.95rem; font-weight: 600; color: var(--opblue); margin-top: 3px; }
         .op-contact { text-align: right; font-size: 0.72rem; color: #52525b; line-height: 1.5; white-space: nowrap; }
+        .op-link { color: var(--opblue); text-decoration: none; font-weight: 600; }
+        .op-link:hover { text-decoration: underline; }
         .op-lens-tag { display: inline-block; font-family: 'Outfit',sans-serif; font-size: 0.58rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: var(--opblue-deep); background: var(--opblue-bg); border: 1px solid #d3e2f3; border-radius: 9px; padding: 2px 8px; margin-bottom: 5px; }
         .op-positioning { font-size: 0.92rem; line-height: 1.6; color: #27272a; margin: 14px 0 16px; }
 
@@ -1473,6 +1478,24 @@
         }
         /* Tighten for PDF capture */
         #onePager.op-print .op-doc { padding: 26px 28px; }
+    </style>
+    <style id="resumePrintStyles">
+        /* ===== Resume PDF — matches Executive Summary design language ===== */
+        #resume-print { color: #1a1a1a; --opblue:#1E5FA8; --opblue-deep:#16467d; --opblue-bg:#eef4fb; font-family: 'Inter', sans-serif; }
+        #resume-print .rp-head { border-bottom: 2px solid var(--opblue); }
+        #resume-print .rp-name { font-family: 'Outfit', sans-serif; font-weight: 700; letter-spacing: -0.01em; color: #1a1a1a; }
+        #resume-print .rp-title { font-weight: 600; color: var(--opblue); }
+        #resume-print .rp-contact a { color: var(--opblue); text-decoration: none; font-weight: 600; }
+        #resume-print .rp-contact a:hover { text-decoration: underline; }
+        #resume-print .rp-h2 {
+            font-family: 'Outfit', sans-serif; font-weight: 700; text-transform: uppercase;
+            letter-spacing: 0.13em; color: #1a1a1a; padding-left: 10px;
+            border-left: 3px solid var(--opblue); font-size: 0.95rem;
+        }
+        #resume-print .rp-tagline { color: var(--opblue-deep); font-weight: 600; }
+        #resume-print .rp-org { color: var(--opblue-deep); font-weight: 600; }
+        #resume-print .rp-comp strong { color: var(--opblue-deep); }
+        #resume-print ul.list-disc li::marker { color: var(--opblue); }
     </style>
     <style id="glassOverlayStyles">
         /* ============================================================
@@ -1644,10 +1667,11 @@
                                                 <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32 z-10">
                     <div class="grid md:grid-cols-2 gap-12 items-center">
                         <div class="max-w-3xl stagger page-enter text-left">
-                                    <h1 class="font-display text-4xl sm:text-5xl md:text-6xl font-semibold mb-6 leading-[1.08] tracking-tight">
-                                <span class="text-[#1a1a1a]">F&A and Procurement</span><br/>
-                                <span class="text-[#8e8e8e]">Business and P&amp;L Leader</span><br/>
-                                <span class="text-[#8e8e8e] text-3xl sm:text-4xl md:text-5xl">Three decades rebuilding the economics of <em>F&A</em> and procurement delivery, at scale.</span>
+                                    <h1 class="font-display text-4xl sm:text-5xl md:text-6xl font-semibold mb-4 leading-[1.08] tracking-tight">
+                                <span class="text-[#1a1a1a]">Business Leader and</span><br/>
+                                <span class="text-[#1a1a1a] whitespace-nowrap">Transformation Evangelist</span>
+                                <span class="hero-tagline block text-[#8e8e8e] text-[2.0625rem] sm:text-[2.625rem] md:text-[3.375rem] leading-tight mt-1">F&A and Procurement</span>
+                                <span class="block text-[#8e8e8e] text-3xl sm:text-4xl md:text-5xl leading-snug mt-1">Three decades rebuilding the economics of <em>F&A</em> and procurement delivery, at scale.</span>
                             </h1>
                                     <p class="text-lg sm:text-xl text-zinc-600 leading-relaxed mb-8 max-w-2xl font-light">
                                 P&L owner, transformation leader and executive client sponsor across Finance &amp; Accounting, Procurement and Global Business Services. $110M portfolio, 52 clients, 4,500+ people, and $10M of P&L improvement delivered in 18 months.
@@ -1708,7 +1732,7 @@
             </div>
 
             <!-- Intro Section -->
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-10">
                 <div class="grid md:grid-cols-2 gap-16 items-center">
                     <div>
                         <h2 class="font-display text-3xl font-semibold tracking-tight text-slate-900 mb-6">Strategic Innovation Meets <br/>Operational Discipline</h2>
@@ -1873,7 +1897,7 @@
                         <span class="hidden md:inline text-zinc-300">•</span>
                         <span>Bangalore, India</span>
                     </div>
-                    <p class="text-xl text-[#1E5FA8] font-semibold">F&A and Procurement Business and P&amp;L Leader</p>
+                    <p class="text-xl text-[#1E5FA8] font-semibold">Business Leader and P&amp;L Owner - F&A and Procurement</p>
                     <p class="text-zinc-600 mt-2">Enterprise P&L Leader | Executive Client Sponsor | Analytics-Led BPO & Digital Transformation</p>
 
                     <!-- Resume Download CTA -->
@@ -2478,21 +2502,22 @@
 
     <!-- Hidden Resume Template for PDF Generation -->
     <section id="resume-print" class="hidden bg-white text-slate-800 max-w-5xl mx-auto my-10 p-10 rounded-xl shadow border border-slate-200">
-        <header class="border-b border-slate-200 pb-4 mb-6 flex flex-row items-center justify-between gap-3">
+        <header class="rp-head border-b pb-4 mb-6 flex flex-row items-center justify-between gap-3">
             <div>
-                <h1 class="font-display text-3xl font-semibold tracking-tight text-slate-900">Balasubramaniam Arunachalam, CPA (Aus), CGMA (UK), CMA (Ind)</h1>
-                <p class="text-sm text-slate-600">F&A and Procurement Business and P&amp;L Leader</p>
+                <h1 class="rp-name font-display text-3xl font-semibold tracking-tight">Balasubramaniam Arunachalam, CPA (Aus), CGMA (UK), CMA (Ind)</h1>
+                <p class="rp-title text-sm">Business Leader and P&amp;L Owner - F&A and Procurement</p>
             </div>
-            <div class="text-sm text-right text-slate-600 space-y-1">
+            <div class="rp-contact text-sm text-right text-slate-600 space-y-1">
                 <div><a href="tel:+919945213395">+91 99452 13395</a></div>
                 <div><a href="mailto:bala.arunachalam123@gmail.com">bala.arunachalam123@gmail.com</a></div>
                 <div>Bangalore, India</div>
                 <div><a href="https://www.linkedin.com/in/balasubramaniam-arunachalam-2417257">linkedin.com/in/balasubramaniam-arunachalam-2417257</a></div>
+                <div><a href="https://balaarunachalam123-ai.github.io/Resume/">Professional Online Portfolio</a></div>
             </div>
         </header>
 
         <section class="mb-4">
-            <p class="text-sm font-semibold text-slate-800">Enterprise P&L Leader | Executive Client Sponsor | Analytics-Led BPO & Digital Transformation</p>
+            <p class="rp-tagline text-sm font-semibold">Enterprise P&L Leader | Executive Client Sponsor | Analytics-Led BPO & Digital Transformation</p>
             <p class="text-sm text-slate-700">Enterprise Transformation ▪ AI & Automation Enablement ▪ Global Service Delivery ▪ P&L Leadership ▪ Strategic Account Management ▪ Change Leadership at Scale</p>
         </section>
 
@@ -2520,12 +2545,12 @@
         </section>
 
         <section class="mb-4">
-            <h2 class="font-bold text-slate-900 text-lg mb-2">PROFESSIONAL EXPERIENCE</h2>
+            <h2 class="rp-h2 text-lg mb-2">PROFESSIONAL EXPERIENCE</h2>
             <div class="space-y-4 text-sm text-slate-800">
                 <div>
                     <div class="flex justify-between font-semibold text-slate-900"><span>Conduent Business Services | Bangalore, India</span><span>2004–2017, 2019–2023, 2024 – current</span></div>
                     <div class="text-slate-600 text-xs">Formerly Affiliated Computer Services / Xerox Business Services</div>
-                    <div class="font-semibold text-slate-900 mt-1">SENIOR DIRECTOR – GLOBAL DELIVERY & STRATEGIC ACCOUNT MANAGEMENT</div>
+                    <div class="rp-org font-semibold mt-1">SENIOR DIRECTOR – GLOBAL DELIVERY & STRATEGIC ACCOUNT MANAGEMENT</div>
                     <ul class="list-disc pl-5 mt-2 space-y-1 text-slate-700">
                         <li>Enterprise-scope leadership role with end-to-end accountability for global portfolio P&L, executive client relationships, transformation agenda, and leadership succession.</li>
                         <li>Enterprise owner of a $110M global portfolio, accountable for P&L performance, executive client sponsorship, delivery governance, and transformation outcomes across Finance, Accounting, and Procurement.</li>
@@ -2546,7 +2571,7 @@
                 <div>
                     <div class="flex justify-between font-semibold text-slate-900"><span>WNS Global Services | Bangalore, India</span><span>2023 – 2024</span></div>
                     <div class="text-slate-600 text-xs">Global BPO Provider | 60,000+ Employees | $1.3B+ Revenue</div>
-                    <div class="font-semibold text-slate-900 mt-1">CORPORATE SENIOR VICE PRESIDENT – OPERATIONS</div>
+                    <div class="rp-org font-semibold mt-1">CORPORATE SENIOR VICE PRESIDENT – OPERATIONS</div>
                     <p class="text-slate-700 mt-1">Enterprise role with full P&L accountability, executive client sponsorship, and global delivery governance across Manufacturing and Services verticals.</p>
                     <ul class="list-disc pl-5 mt-2 space-y-1 text-slate-700">
                         <li>Owned $70M portfolio P&L and led 2,800+ team members across global delivery locations.</li>
@@ -2570,7 +2595,7 @@
         </section>
 
         <section class="mb-4">
-            <h2 class="font-bold text-slate-900 text-lg mb-2">CERTIFICATIONS</h2>
+            <h2 class="rp-h2 text-lg mb-2">CERTIFICATIONS</h2>
             <ul class="text-sm text-slate-700 space-y-1">
                 <li>Certified Public Accountant (CPA), Australia – 2025</li>
                 <li>Chartered Global Management Accountant (CGMA), CIMA, UK – 2021</li>
@@ -2579,7 +2604,7 @@
         </section>
 
         <section>
-            <h2 class="font-bold text-slate-900 text-lg mb-2">EDUCATION</h2>
+            <h2 class="rp-h2 text-lg mb-2">EDUCATION</h2>
             <ul class="text-sm text-slate-700 space-y-1">
                 <li>Executive General Management Program (EGMP) | Indian Institute of Management, Bangalore – 2011</li>
                 <li>Cost & Works Accountant (ICWAI) | Institute of Cost Accountants of India – 2009</li>
@@ -2588,19 +2613,6 @@
             </ul>
         </section>
     </section>
-
-    <!-- Footer -->
-    <footer class="bg-white border-t border-slate-200 py-12">
-        <div class="max-w-7xl mx-auto px-4 text-center">
-            <h2 class="font-display text-2xl font-semibold tracking-tight text-slate-900 mb-2">Bala Arunachalam</h2>
-            <p class="text-slate-500 mb-6">Executive Profile & Portfolio</p>
-            <div class="flex justify-center gap-6 mb-8">
-                <a href="#" class="text-slate-400 hover:text-blue-600 transition"><i data-lucide="linkedin" class="w-6 h-6"></i></a>
-                <a href="#" class="text-slate-400 hover:text-blue-600 transition"><i data-lucide="mail" class="w-6 h-6"></i></a>
-            </div>
-            <p class="text-sm text-slate-400">© 2025 Bala Arunachalam. All rights reserved.</p>
-        </div>
-    </footer>
 
     <!-- Project Modal -->
     <div id="projectModal" class="fixed inset-0 z-[100] hidden">
@@ -3468,7 +3480,7 @@
             });
             
             context += `\nCAREER:
-            2024-Present: Senior Strategic Account Manager at Conduent.
+            2024-Present: Regional Strategic Client Partner - EMEA at Conduent.
             2023-2024: Corporate SVP at WNS.
             2019-2023: Global Delivery Lead at Conduent.
             2017-2019: Director Global Delivery at GEP Worldwide.
@@ -3520,7 +3532,7 @@
                 },
                 {
                     test: /conduent|wns|gep|xerox|career|background|education|credential|cpa|cgma/,
-                    answer: `**Career:** 2024–Present Senior Strategic Account Manager (Conduent); 2023–2024 Corporate SVP (WNS); 2019–2023 Global Delivery Lead (Conduent); 2017–2019 Director Global Delivery (GEP); 2004–2017 leadership at Conduent/Xerox; 1996–2003 F&A early career (AMCO Batteries, Coca-Cola India, United Breweries).\n\n**Credentials:** CPA (Australia), CGMA/CIMA (UK), EGMP (IIM Bangalore), ICWAI (India), MBA/PGDBA (Symbiosis), B.Com (Bangalore University).`
+                    answer: `**Career:** 2024–Present Regional Strategic Client Partner - EMEA (Conduent); 2023–2024 Corporate SVP (WNS); 2019–2023 Global Delivery Lead (Conduent); 2017–2019 Director Global Delivery (GEP); 2004–2017 leadership at Conduent/Xerox; 1996–2003 F&A early career (AMCO Batteries, Coca-Cola India, United Breweries).\n\n**Credentials:** CPA (Australia), CGMA/CIMA (UK), EGMP (IIM Bangalore), ICWAI (India), MBA/PGDBA (Symbiosis), B.Com (Bangalore University).`
                 },
                 {
                     test: /portfolio|110m|4500|p&l|10m|scale/,
@@ -4479,9 +4491,9 @@
                 }
             },
             {
-                short: 'Sr. Strategic Account Mgr',
+                short: 'Regional Strategic Client Partner',
                 period: '2024–Now',
-                role: 'Senior Strategic Account Manager',
+                role: 'Regional Strategic Client Partner - EMEA',
                 org: 'Conduent',
                 badges: {
                     hr: 'Executive client sponsorship',
@@ -4561,13 +4573,15 @@
             <header class="op-head">
                 <div>
                     <div class="op-name">Bala Arunachalam</div>
-                    <div class="op-title">F&amp;A and Procurement Business and P&amp;L Leader</div>
+                    <div class="op-title">Business Leader and P&amp;L Owner - F&A and Procurement</div>
                 </div>
                 <div class="op-contact">
                     <div class="op-lens-tag">${lensLabel} lens</div>
                     <div>Bangalore, India</div>
                     <div>bala.arunachalam123@gmail.com</div>
                     <div>+91 99452 13395</div>
+                    <div><a class="op-link" href="https://www.linkedin.com/in/balasubramaniam-arunachalam-2417257" target="_blank" rel="noopener">LinkedIn Profile</a></div>
+                    <div><a class="op-link op-portfolio-link" href="https://balaarunachalam123-ai.github.io/Resume/" target="_blank" rel="noopener">Professional Online Portfolio</a></div>
                 </div>
             </header>`;
         }
@@ -4792,22 +4806,144 @@
             </div>`;
         }
 
+        /* ============================================================
+           html2canvas flattens the page into a bitmap, so <a> tags lose
+           their clickability in the PDF. This helper re-attaches real
+           jsPDF link annotations by measuring each anchor's position
+           relative to the rendered source element and mapping it into the
+           PDF's coordinate space (inches). Works for any number of links
+           and across page breaks.
+           ============================================================ */
+        function overlayPdfLinks(pdf, source, marginIn) {
+            try {
+                const links = source.querySelectorAll('a[href]');
+                if (!links.length) return;
+
+                const pageW = pdf.internal.pageSize.getWidth();
+                const pageH = pdf.internal.pageSize.getHeight();
+                const renderableW = pageW - (marginIn * 2);
+
+                // Single rect read for the container; each link rect is read
+                // immediately after so viewport scroll offset cancels out.
+                const srcRect = source.getBoundingClientRect();
+                const scale = renderableW / srcRect.width; // px -> inches
+
+                links.forEach((a) => {
+                    const url = a.getAttribute('href');
+                    if (!url || url.startsWith('#')) return;
+                    const r = a.getBoundingClientRect();
+                    if (!r.width || !r.height) return;
+
+                    const xIn = marginIn + (r.left - srcRect.left) * scale;
+                    const topIn = marginIn + (r.top - srcRect.top) * scale;
+                    const wIn = r.width * scale;
+                    const hIn = r.height * scale;
+
+                    // Figure out which page the link lands on. Content height
+                    // available per page is (pageH - 2*margin).
+                    const usableH = pageH - (marginIn * 2);
+                    const contentTop = topIn - marginIn; // distance from top of content
+                    const pageIndex = Math.floor(contentTop / usableH);
+                    const yOnPage = marginIn + (contentTop - pageIndex * usableH);
+
+                    const totalPages = pdf.internal.getNumberOfPages();
+                    const targetPage = Math.min(pageIndex + 1, totalPages);
+
+                    pdf.setPage(targetPage);
+                    pdf.link(xIn, yOnPage, wIn, hIn, { url });
+                });
+            } catch (e) {
+                console.warn('Could not attach clickable links to PDF:', e);
+            }
+        }
+
         function downloadOnePagerPDF() {
             const source = document.getElementById('onePager');
             if (!source) return;
-            if (typeof html2pdf === 'undefined') { printOnePager(); return; }
             source.classList.add('op-print');
+
+            const margin = 0.4; // inches
+            const filename = 'Bala_Arunachalam_Executive_Summary_' + _currentLens + '.pdf';
+            const JsPDF = (window.jspdf && window.jspdf.jsPDF) ? window.jspdf.jsPDF : null;
+
+            // Preferred path: html2canvas + jsPDF directly, so we can force
+            // the whole one-pager onto a SINGLE A4 page and keep links live.
+            if (typeof window.html2canvas === 'function' && JsPDF) {
+                window.html2canvas(source, { scale: 3, useCORS: true, backgroundColor: '#ffffff' })
+                    .then((canvas) => {
+                        const pdf = new JsPDF({ unit: 'in', format: 'a4', orientation: 'portrait' });
+                        const pageW = pdf.internal.pageSize.getWidth();
+                        const pageH = pdf.internal.pageSize.getHeight();
+                        const availW = pageW - margin * 2;
+                        const availH = pageH - margin * 2;
+
+                        // Fit BOTH dimensions inside the printable area.
+                        const fitScale = Math.min(availW / canvas.width, availH / canvas.height);
+                        const imgWIn = canvas.width * fitScale;
+                        const imgHIn = canvas.height * fitScale;
+                        const offsetXIn = margin + (availW - imgWIn) / 2; // centre
+                        const offsetYIn = margin;                          // top
+
+                        pdf.addImage(canvas.toDataURL('image/jpeg', 1), 'JPEG',
+                                     offsetXIn, offsetYIn, imgWIn, imgHIn);
+
+                        // Re-attach clickable links over the placed image.
+                        const srcRect = source.getBoundingClientRect();
+                        const pxToIn = fitScale * (canvas.width / srcRect.width);
+                        source.querySelectorAll('a[href]').forEach((a) => {
+                            const url = a.getAttribute('href');
+                            if (!url || url.startsWith('#')) return;
+                            const r = a.getBoundingClientRect();
+                            if (!r.width || !r.height) return;
+                            pdf.link(
+                                offsetXIn + (r.left - srcRect.left) * pxToIn,
+                                offsetYIn + (r.top - srcRect.top) * pxToIn,
+                                r.width * pxToIn,
+                                r.height * pxToIn,
+                                { url }
+                            );
+                        });
+
+                        pdf.save(filename);
+                        source.classList.remove('op-print');
+                    })
+                    .catch((e) => {
+                        console.warn('Direct single-page render failed, falling back:', e);
+                        source.classList.remove('op-print');
+                        if (typeof html2pdf !== 'undefined') { downloadOnePagerPDFFallback(); }
+                        else { printOnePager(); }
+                    });
+                return;
+            }
+
+            // Fallback if the bundled globals are unavailable.
+            if (typeof html2pdf !== 'undefined') { downloadOnePagerPDFFallback(); }
+            else { source.classList.remove('op-print'); printOnePager(); }
+        }
+
+        // Fallback: original html2pdf chain (may paginate) with link overlay.
+        function downloadOnePagerPDFFallback() {
+            const source = document.getElementById('onePager');
+            if (!source) return;
+            source.classList.add('op-print');
+            const margin = 0.4;
             const opt = {
-                margin: 0.4,
+                margin: margin,
                 filename: 'Bala_Arunachalam_Executive_Summary_' + _currentLens + '.pdf',
                 image: { type: 'jpeg', quality: 1 },
                 html2canvas: { scale: 3, useCORS: true },
                 jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' },
                 pagebreak: { mode: ['css', 'legacy'] }
             };
-            html2pdf().set(opt).from(source).save()
-                .then(() => { source.classList.remove('op-print'); })
-                .catch(() => { source.classList.remove('op-print'); printOnePager(); });
+            html2pdf().set(opt).from(source).toPdf().get('pdf').then((pdf) => {
+                overlayPdfLinks(pdf, source, margin);
+                return pdf;
+            }).save().then(() => {
+                source.classList.remove('op-print');
+            }).catch(() => {
+                source.classList.remove('op-print');
+                printOnePager();
+            });
         }
 
         function printOnePager() {
@@ -5228,15 +5364,21 @@
             const source = document.getElementById('resume-print');
             if (!source) return;
             source.classList.add('resume-print-visible');
+            const margin = 0.5;
             const opt = {
-                margin: 0.5,
+                margin: margin,
                 filename: 'Bala_Arunachalam_Resume.pdf',
                 image: { type: 'jpeg', quality: 1 },
                 html2canvas: { scale: 3, useCORS: true },
                 jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' },
                 pagebreak: { mode: ['css', 'legacy'] }
             };
-            html2pdf().set(opt).from(source).save().then(() => {
+            html2pdf().set(opt).from(source).toPdf().get('pdf').then((pdf) => {
+                overlayPdfLinks(pdf, source, margin);
+                return pdf;
+            }).save().then(() => {
+                source.classList.remove('resume-print-visible');
+            }).catch(() => {
                 source.classList.remove('resume-print-visible');
             });
         }
@@ -5651,7 +5793,7 @@
                 'VERSION:3.0',
                 'N:Arunachalam;Balasubramaniam;;;',
                 'FN:Balasubramaniam Arunachalam',
-                'TITLE:F&A and Procurement Business and P&L Leader',
+                'TITLE:Business Leader and P&L Owner - F&A and Procurement',
                 'TEL;TYPE=CELL:+919945213395',
                 'EMAIL;TYPE=INTERNET:bala.arunachalam123@gmail.com',
                 'URL:https://www.linkedin.com/in/balasubramaniam-arunachalam-2417257',
